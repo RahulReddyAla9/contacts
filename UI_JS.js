@@ -1,6 +1,6 @@
 const api= document.getElementById('a')
 function UI(data2){
-    for(var i=0;i<6;i++){
+    for(var i=0;i<data2.length;i++){
         var FN=data2[i].name.first
         var LN=data2[i].name.last
         var EM=data2[i].email

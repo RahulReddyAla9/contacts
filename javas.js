@@ -1,20 +1,28 @@
-var x=1;
-function load(){
+function load(call){
     var request= new XMLHttpRequest();
-    //url='https://reqres.in/api/users?page='+x
-    url='https://randomuser.me/api/?results=100'+x
+    url='https://randomuser.me/api/?results=100'
     request.open('GET',url,true)
     request.onload = function() {
+       call();
+       console.log(url)
         var data = JSON.parse(this.response)
         var data2=data["results"]; 
-        if (data2.length>0) {
+       // if (data2.length>0) {
             UI(data2)
-        }
-        else{
-            document.getElementById("button").style.visibility="hidden"
-            alert("NO DATA!")
-        }
+    //}
     }
     request.send()
-    x=x+1;
+}
+ function calling(){
+     document.getElementById("lds-ripple").style.visibility="hidden";
+ }
+window.onscroll=function(){ 
+    // console.log(window.innerHeight+' '+window.scrollY+' '+document.body.scrollHeight)
+
+    if((window.innerHeight+window.scrollY)>=document.body.scrollHeight)
+    {
+        document.getElementById("lds-ripple").style.visibility="visible";   
+        // alert("Fetching Data!")
+        load(calling);
+    }
 }
