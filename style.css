@@ -33,10 +33,12 @@
   margin-left: 50px;
 }
 .card:hover{
-  box-shadow: 20px 20px 10px 0px rgba(97, 58, 58, 0.2);
+  box-shadow: 20px 20px 10px 0px rgba(31, 22, 22, 0.2);
 }
 .name{
-  padding: 25px 5px;
+  top: auto;
+  margin-top: 0px;
+  padding-bottom: 80px;
   text-align: center;
   color:crimson ;
 
@@ -60,4 +62,18 @@
   margin-left:auto;
   margin-right:auto;
   padding:25px;
+}
+.proImage{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  font-size: 50px;
+  border:2px solid black;
+  color:white;
+  background-color: #004D40;
+  text-align: center;
+  line-height:130px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
