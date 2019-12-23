@@ -1,4 +1,3 @@
-const api= document.getElementById('a')
 function UI(data2){
     for(var i=0;i<data2.length;i++){
         var FN=data2[i].name.first
@@ -34,13 +33,17 @@ function addPerson(firstname,lastname,email,image_url)
     
     const h3=document.createElement('h3')
     h3.textContent=firstname+' '+lastname
+    h3.setAttribute('id','first_last_name')
     
     const p=document.createElement('p')
     p.textContent=email
+    p.setAttribute('id','idemail')
     
     name.appendChild(h3)
     name.appendChild(p)
     
     card.appendChild(name)
-    api.appendChild(card)
+    document.getElementById('root').appendChild(card)
 }
+
+module.exports={UI,addPerson} 

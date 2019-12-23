@@ -1,3 +1,8 @@
+
+const api=document.createElement('div')
+api.setAttribute('id','root')
+document.body.appendChild(api)
+
 function load(call){
     var request= new XMLHttpRequest();
     url='https://randomuser.me/api/?results=100'
@@ -7,7 +12,7 @@ function load(call){
        console.log(url)
         var data = JSON.parse(this.response)
         var data2=data["results"]; 
-       // if (data2.length>0) {
+       // if (data2.length>0)
             UI(data2)
     //}
     }
@@ -26,3 +31,5 @@ window.onscroll=function(){
         load(calling);
     }
 }
+
+module.exports={load,calling}
